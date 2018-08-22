@@ -32,11 +32,10 @@ RUN gem install danger-gitlab
 RUN gem install specific_install
 RUN gem specific_install https://github.com/radimhalfar/danger-jira
 
-ENV WORK_DIR="/danger"
+ENV WORKDIR="/danger"
 
 RUN danger --version
 
-# VOLUME ${WORK_DIR}
-# WORKDIR ${WORK_DIR}
+WORKDIR ${WORKDIR}
 
 ENTRYPOINT [""]
